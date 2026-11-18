@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Moodle PANS Dark Mode</title>
+    <link rel="stylesheet" href="popup.css">
+  </head>
+  <body>
+    <main>
+      <div class="brand">
+        <img src="darkmode_moodle_logo.svg" alt="">
+        <p class="eyebrow">Moodle PANS</p>
+      </div>
+      <h1>Wygląd</h1>
+      <p class="description">Wybierz wariant ciemnego motywu.</p>
+      <fieldset>
+        <legend>Motyw</legend>
+        <label class="theme-option">
+          <input type="radio" name="theme" value="blue">
+          <span class="preview blue" aria-hidden="true"></span>
+          <span><strong>Ciemny niebieski</strong><small>Domyślny wariant PANS</small></span>
+        </label>
+        <label class="theme-option">
+          <input type="radio" name="theme" value="gray">
+          <span class="preview gray" aria-hidden="true"></span>
+          <span><strong>Ciemny szary</strong><small>Stonowany, neutralny wygląd</small></span>
+        </label>
+        <label class="theme-option">
+          <input type="radio" name="theme" value="black">
+          <span class="preview black" aria-hidden="true"></span>
+          <span><strong>Ciemny czarny</strong><small>Najgłębsze tło i wysoki kontrast</small></span>
+        </label>
+        <label class="theme-option">
+          <input type="radio" name="theme" value="off">
+          <span class="preview off" aria-hidden="true"></span>
+          <span><strong>Wyłącz tryb ciemny</strong><small>Przywraca domyślny wygląd Moodle</small></span>
+        </label>
+      </fieldset>
+      <p id="status" class="status" aria-live="polite"></p>
+    </main>
+    <script src="popup.js"></script>
+  </body>
+</html>

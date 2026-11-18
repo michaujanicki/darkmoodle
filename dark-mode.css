@@ -1,0 +1,407 @@
+/* Moodle PANS Dark Mode — one palette, scoped to the extension class. */
+:root.pans-dark-mode {
+  color-scheme: dark;
+  --pans-bg: hsl(214 47% 9%);
+  --pans-surface: hsl(214 42% 15%);
+  --pans-raised: hsl(214 39% 21%);
+  --pans-hover: hsl(214 37% 25%);
+  --pans-input: hsl(214 45% 12%);
+  --pans-text: hsl(214 45% 94%);
+  --pans-muted: hsl(214 28% 74%);
+  --pans-border: hsl(214 33% 34%);
+  --pans-border-strong: hsl(214 36% 45%);
+  --pans-accent-deep: hsl(214 52% 27%);
+  --pans-accent: hsl(214 88% 59%);
+  --pans-link: hsl(214 100% 76%);
+  --pans-link-soft: hsl(214 100% 87%);
+  --pans-on-accent: #fff;
+  --pans-qr-background: #fff;
+  scrollbar-color: var(--pans-border-strong) var(--pans-bg);
+  scrollbar-width: thin;
+}
+
+/* Theme palettes selected in the extension settings. */
+:root.pans-dark-mode.pans-theme-gray {
+  --pans-bg: hsl(220 8% 9%);
+  --pans-surface: hsl(220 8% 15%);
+  --pans-raised: hsl(220 7% 21%);
+  --pans-hover: hsl(220 7% 27%);
+  --pans-input: hsl(220 9% 12%);
+  --pans-text: hsl(210 12% 94%);
+  --pans-muted: hsl(210 9% 72%);
+  --pans-border: hsl(215 8% 35%);
+  --pans-border-strong: hsl(215 9% 47%);
+  --pans-accent-deep: hsl(214 20% 28%);
+  --pans-accent: hsl(211 62% 60%);
+  --pans-link: hsl(211 95% 76%);
+  --pans-link-soft: hsl(211 100% 88%);
+}
+
+:root.pans-dark-mode.pans-theme-black {
+  --pans-bg: hsl(0 0% 4%);
+  --pans-surface: hsl(0 0% 9%);
+  --pans-raised: hsl(0 0% 15%);
+  --pans-hover: hsl(0 0% 21%);
+  --pans-input: hsl(0 0% 6%);
+  --pans-text: hsl(0 0% 97%);
+  --pans-muted: hsl(0 0% 75%);
+  --pans-border: hsl(0 0% 31%);
+  --pans-border-strong: hsl(0 0% 45%);
+  --pans-accent-deep: hsl(214 44% 24%);
+  --pans-accent: hsl(214 88% 58%);
+  --pans-link: hsl(214 100% 77%);
+  --pans-link-soft: hsl(214 100% 89%);
+}
+
+:root.pans-dark-mode :is(body, #page, #page-wrapper, .page-content, #page-header,
+  .page-header, .header-main, .header-wrapper, .header-top, .site-header, .site-header-inner,
+  .navbar-wrapper, .main-header, #page-footer, footer, .footer-main, .footer-content,
+  .footer-dark, .footer-dark-inner, .footer-content-debugging) {
+  background-color: var(--pans-bg) !important;
+  color: var(--pans-text) !important;
+  border-color: var(--pans-border) !important;
+}
+
+/* Shared surfaces and controls. */
+:root.pans-dark-mode :is(.card, .card-body, .block, .drawer, .modal-content, .dropdown-menu,
+  .list-group-item, .activity-item, .course-content .section, .region_main_settings_menu_proxy,
+  .secondary-navigation, .form-control, .custom-select, .form-select, textarea, .table,
+  .path-mod-forum .forum-post-container, .bg-white, .bg-light, .bg-gray-100, .bg-gray-200,
+  .bg-gray-300, .alert-light, .breadcrumb, .page-link, .pagination .page-item) {
+  background-color: var(--pans-surface) !important;
+  color: var(--pans-text) !important;
+  border-color: var(--pans-border) !important;
+}
+
+:root.pans-dark-mode :is(.navbar, .navbar-light, .secondary-navigation .moremenu,
+  .bg-dark, .navbar-dark, .dropdown-header) {
+  background-color: var(--pans-input) !important;
+  color: var(--pans-text) !important;
+  border-color: var(--pans-border) !important;
+}
+
+:root.pans-dark-mode :is(h1, h2, h3, h4, h5, h6, p, li, label, .text-body, .text-dark,
+  .text-black, .text-reset, .dropdown-item, .nav-tabs .nav-link, .nav-pills .nav-link,
+  .breadcrumb-item.active) { color: var(--pans-text) !important; }
+
+:root.pans-dark-mode :is(.text-muted, .text-secondary, small, .description,
+  input::placeholder, textarea::placeholder) { color: var(--pans-muted) !important; opacity: 1; }
+
+:root.pans-dark-mode :is(a, .btn-link, .nav-link.active, .moremenu .nav-link.active) {
+  color: var(--pans-link) !important;
+}
+
+:root.pans-dark-mode :is(.border, hr, .dropdown-divider, .table th, .table td,
+  .list-group-item) { border-color: var(--pans-border) !important; }
+
+:root.pans-dark-mode :is(.dropdown-item:hover, .dropdown-item:focus, .dropdown-item.active,
+  .nav-tabs .nav-link.active, .nav-pills .nav-link.active, .page-item.active .page-link,
+  .table-hover > tbody > tr:hover > *, .table-striped > tbody > tr:nth-of-type(odd) > *) {
+  background-color: var(--pans-hover) !important;
+  color: var(--pans-link) !important;
+  border-color: var(--pans-border) !important;
+}
+
+:root.pans-dark-mode :is(.btn-primary, .btn-primary:hover, .btn-outline-primary:hover) {
+  background-color: var(--pans-accent) !important;
+  border-color: var(--pans-accent) !important;
+  color: var(--pans-on-accent) !important;
+}
+
+:root.pans-dark-mode :is(.btn-secondary, .btn-outline-secondary, .badge-secondary,
+  .tooltip-inner, .toast, .toast-header, .alert, .badge-light, .progress) {
+  background-color: var(--pans-raised) !important;
+  color: var(--pans-text) !important;
+  border-color: var(--pans-border) !important;
+}
+
+:root.pans-dark-mode :is(.btn-outline-primary, .btn-outline-info) {
+  background-color: transparent !important;
+  border-color: var(--pans-accent) !important;
+  color: var(--pans-link) !important;
+}
+
+/* Login page. Moodle's login template uses its own nested wrappers and does
+   not consistently inherit the regular card and form-control styles. */
+:root.pans-dark-mode :is(#page-login-index, #page-login-forgot_password,
+  #page-login-signup, .login-page, .login-wrapper, .login-container,
+  .login-card, .loginbox, .login-form, .login-identityproviders,
+  .login-identityprovider-btn, .login-languagemenu, .login-divider) {
+  background-color: var(--pans-surface) !important;
+  background-image: none !important;
+  color: var(--pans-text) !important;
+  border-color: var(--pans-border) !important;
+}
+
+:root.pans-dark-mode :is(#page-login-index, #page-login-forgot_password,
+  #page-login-signup) :is(.card, .card-body, .login-container, .loginbox) {
+  box-shadow: 0 18px 45px rgb(0 0 0 / 35%) !important;
+}
+
+:root.pans-dark-mode :is(.login-wrapper, .login-container, .loginbox,
+  .login-form, .login-identityproviders, .login-languagemenu) :is(label,
+  legend, .form-label, .login-heading, .login-divider, .login-divider span,
+  .instructions, p, small, span) {
+  color: var(--pans-text) !important;
+  opacity: 1 !important;
+}
+
+:root.pans-dark-mode :is(.login-wrapper, .login-container, .loginbox,
+  .login-form) :is(input, select, .form-control, .form-select) {
+  background-color: var(--pans-input) !important;
+  color: var(--pans-text) !important;
+  border-color: var(--pans-border-strong) !important;
+}
+
+:root.pans-dark-mode :is(.login-wrapper, .login-container, .loginbox,
+  .login-form) :is(input, .form-control)::placeholder {
+  color: var(--pans-muted) !important;
+  opacity: 1 !important;
+}
+
+:root.pans-dark-mode :is(.login-wrapper, .login-container, .loginbox,
+  .login-form) :is(.input-group-text, .password-icon, .show-password,
+  [data-passwordunmask]) {
+  background-color: var(--pans-raised) !important;
+  color: var(--pans-link) !important;
+  border-color: var(--pans-border-strong) !important;
+}
+
+:root.pans-dark-mode :is(.login-wrapper, .login-container, .loginbox,
+  .login-form, .login-identityproviders) :is(a, .forgot-password-link,
+  .login-languagemenu a) { color: var(--pans-link) !important; }
+
+/* Some Moodle theme buttons are anchors.  The broad link rule above otherwise
+   gives them pale-blue text on the saturated blue action background. */
+:root.pans-dark-mode :is(#page-login-index, #page-login-forgot_password,
+  #page-login-signup) :is(.btn, a.btn, button.btn, input.btn,
+  .login-identityprovider-btn, .login-identityproviders a) {
+  color: var(--pans-on-accent) !important;
+  text-shadow: 0 1px 1px rgb(0 0 0 / 22%);
+}
+
+:root.pans-dark-mode :is(#page-login-index, #page-login-forgot_password,
+  #page-login-signup) :is(.btn-primary, .login-identityprovider-btn) {
+  background-color: var(--pans-accent) !important;
+  border-color: var(--pans-accent) !important;
+}
+
+/* Action labels must remain readable when a theme supplies a blue background
+   to an anchor styled as a Bootstrap button (for example calendar actions). */
+:root.pans-dark-mode a.btn.btn.btn,
+:root.pans-dark-mode button.btn.btn.btn,
+:root.pans-dark-mode input.btn.btn.btn {
+  color: var(--pans-on-accent) !important;
+  text-shadow: 0 1px 1px rgb(0 0 0 / 28%) !important;
+  opacity: 1 !important;
+}
+
+:root.pans-dark-mode .progress-bar { background-color: var(--pans-accent) !important; }
+:root.pans-dark-mode :is(a, button, input, select, textarea):focus-visible {
+  outline: 3px solid hsl(42 88% 62%) !important; outline-offset: 2px;
+}
+
+/* Tables and grade reports. */
+:root.pans-dark-mode :is(table, .generaltable, .table > :not(caption) > * > *,
+  .generaltable > :not(caption) > * > *) {
+  background-color: var(--pans-surface) !important;
+  color: var(--pans-text) !important;
+  border-color: var(--pans-border) !important;
+}
+
+:root.pans-dark-mode :is(table thead, table thead tr, table thead th, .generaltable thead,
+  .generaltable thead tr, .generaltable thead th, .table .header, .generaltable .header,
+  .table .heading, .generaltable .heading) {
+  background-color: var(--pans-raised) !important; color: var(--pans-text) !important;
+}
+
+:root.pans-dark-mode :is(.path-grade-report-overview, .path-grade-report-user,
+  .grade-report-user, .gradereport_overview, #user-grade) tbody tr:hover > * {
+  background-color: var(--pans-hover) !important;
+}
+
+/* Eduka course overview and categories. */
+:root.pans-dark-mode .block_myoverview :is(.card-header,
+  [data-region="course-content"] .d-flex:first-child, .course-list > div > .row:first-child),
+:root.pans-dark-mode .cp-section :is(.cp-list-header, .cp-list-header .cp-list-col) {
+  background: var(--pans-raised) !important;
+  color: var(--pans-text) !important;
+  border-color: var(--pans-border) !important;
+}
+
+:root.pans-dark-mode .cp-section :is(.cp-meta, .cp-meta *) {
+  color: var(--pans-link-soft) !important; opacity: 1 !important;
+}
+
+:root.pans-dark-mode :is(.course_category_tree .category, .course_category_tree .category > .content,
+  .course_category_tree .category > .info, .course_category_tree .category-list,
+  .course_category_tree .category-item, .category-list .category, .category-list .category-item,
+  .category-card, .course-category-card) {
+  background: var(--pans-surface) !important;
+  color: var(--pans-text) !important;
+  border-color: var(--pans-border) !important;
+}
+
+:root.pans-dark-mode :is(.course_category_tree .category, .category-list .category,
+  .category-card, .course-category-card):hover { background: var(--pans-hover) !important; }
+
+:root.pans-dark-mode :is(.course_category_tree .numberofcourse, .category-list .category-count,
+  .category-card .category-count, .course-category-card .category-count) {
+  background: var(--pans-accent-deep) !important; color: var(--pans-link-soft) !important;
+  border: 1px solid var(--pans-border-strong) !important;
+}
+
+/* Popovers, user menu and message drawer. */
+:root.pans-dark-mode :is(.popover-region-container, .popover-region-header-container,
+  .popover-region-content-container, .popover-region-footer-container, .content-item-container,
+  .content-item, .content-item-body, .content-item-footer, #message-drawer, .message-drawer,
+  .message-app, .message-app .header-container, .message-app .body-container,
+  .message-app .footer-container, .usermenu, .usermenu .dropdown-menu, .usermenu .dropdown-item,
+  .user-menu, .user-menu .dropdown-menu, .user-menu .dropdown-item, .useractionmenu,
+  .popover, .popover-body, #usermenu-carousel, #usermenu-carousel .carousel-item) {
+  background: var(--pans-surface) !important;
+  color: var(--pans-text) !important;
+  border-color: var(--pans-border) !important;
+}
+
+/* Bootstrap draws a popover's pointer with pseudo-elements, so it does not
+   inherit the dark surface of the help/contact panel. */
+:root.pans-dark-mode .popover {
+  --bs-popover-bg: var(--pans-surface);
+  --bs-popover-border-color: var(--pans-border);
+}
+
+:root.pans-dark-mode .bs-popover-top > .arrow::after,
+:root.pans-dark-mode .bs-popover-auto[x-placement^="top"] > .arrow::after,
+:root.pans-dark-mode .bs-popover-auto[x-placement^="top"] > .popover-arrow::after,
+:root.pans-dark-mode .bs-popover-top > .popover-arrow::after {
+  border-top-color: var(--pans-surface) !important;
+}
+
+:root.pans-dark-mode .bs-popover-bottom > .arrow::after,
+:root.pans-dark-mode .bs-popover-auto[x-placement^="bottom"] > .arrow::after,
+:root.pans-dark-mode .bs-popover-auto[x-placement^="bottom"] > .popover-arrow::after,
+:root.pans-dark-mode .bs-popover-bottom > .popover-arrow::after {
+  border-bottom-color: var(--pans-surface) !important;
+}
+
+:root.pans-dark-mode :is(.popover-region-header-container, .popover-region-footer-container,
+  .message-app .header-container, .message-app .footer-container, .message-app .searchinput,
+  .popover-region-header-actions, .popover-region-header-actions > *) {
+  background: var(--pans-raised) !important;
+}
+
+:root.pans-dark-mode #usermenu-carousel :is(p, span, div, li, small, .dropdown-item) {
+  color: var(--pans-text) !important;
+  opacity: 1 !important;
+}
+
+:root.pans-dark-mode #usermenu-carousel a { color: var(--pans-link) !important; }
+
+:root.pans-dark-mode :is(.popover-region-container .content-item:hover,
+  .message-app .content-item:hover, .message-app .list-group-item:hover,
+  .usermenu .dropdown-item:hover, .user-menu .dropdown-item:hover) { background: var(--pans-hover) !important; }
+
+:root.pans-dark-mode :is(.message-app input, .message-app .form-control) {
+  background: var(--pans-input) !important;
+  color: var(--pans-text) !important;
+  border-color: var(--pans-border-strong) !important;
+}
+
+/* QR, default initials and editing controls. */
+:root.pans-dark-mode :is(.qrcode, .qr-code, .qr-code-container, .qrcode-container,
+  .mobileapp-qrcode, .mobile-app-qrcode, .mobile-app-qr-code, .qr-code-wrapper,
+  #mobile-app-qrcode, #mobile-app-qr-code, #qr-code, [class*="qrcode"], [class*="qr-code"],
+  img[alt*="QR" i], img[src*="qrcode" i], img[src*="qr_code" i]) {
+  background: var(--pans-qr-background) !important;
+  box-sizing: content-box !important; padding: 12px !important;
+  border-radius: 8px; image-rendering: pixelated;
+}
+
+:root.pans-dark-mode :is(img.defaultuserpic, .userpicture.defaultuserpic, .userinitials,
+  .user-initials, .avatar-initials, .profile-initials, .profileimage, .profilepicture) {
+  background: var(--pans-raised) !important;
+  color: var(--pans-link-soft) !important;
+  border: 2px solid var(--pans-border-strong) !important;
+}
+
+:root.pans-dark-mode :is(#page-user-profile .profileimage img, #page-user-profile .profilepicture img,
+  .user-profile .profileimage img) { filter: invert(1) hue-rotate(180deg) saturate(.55) brightness(.55); }
+
+:root.pans-dark-mode :is(#editingswitch, .editmode-switch, .editmode-switch-form,
+  [id$="editingswitch"], [data-region="edit-mode-toggle"], [data-action="toggle-edit-mode"]) {
+  display: none !important;
+}
+
+/* Navigation icons and breadcrumb shell. */
+:root.pans-dark-mode :is(.navbar, #usernavigation, .nav-drawer) :is(.icon, .icon-no-margin,
+  .fa, .fa-solid, .fa-regular, .fa-light, svg, .caret, .fa-angle-down, .fa-chevron-down,
+  .fa-caret-down, [class*="chevron"], [class*="angle-down"], .dropdown-toggle::after) {
+  color: var(--pans-link) !important; fill: currentColor; border-top-color: var(--pans-link) !important;
+}
+
+:root.pans-dark-mode :is(#nav-notification-popover-container button,
+  [aria-label*="powiadom" i], [title*="powiadom" i]) {
+  color: var(--pans-link) !important;
+  filter: brightness(0) saturate(100%) invert(76%) sepia(61%) saturate(844%) hue-rotate(184deg)
+    brightness(105%) contrast(102%);
+}
+
+:root.pans-dark-mode :is(.breadcrumb-nav, .breadcrumb-wrapper, .breadcrumb-container,
+  .breadcrumb-bar, .breadcrumbs, #page-header .breadcrumb, #page-header nav[aria-label]) {
+  background: var(--pans-surface) !important;
+  background-image: none !important;
+  color: var(--pans-text) !important;
+  border-color: var(--pans-border) !important;
+}
+
+/* Expanded navbar search in the Eduka theme. */
+:root.pans-dark-mode :is([id^="searchinput-navbar-"], .navbar-search, .search-input-wrapper,
+  .search-input-wrapper .input-group, [data-region="search-input"], [data-region="search-form"]) {
+  background: var(--pans-surface) !important;
+  border-color: var(--pans-border) !important;
+  box-shadow: none !important;
+}
+
+:root.pans-dark-mode :is([id^="searchinput-navbar-"] input, .navbar-search input,
+  .search-input-wrapper input, [data-region="search-input"] input) {
+  background: var(--pans-input) !important;
+  color: var(--pans-text) !important;
+  border-color: var(--pans-border-strong) !important;
+  box-shadow: none !important;
+}
+
+:root.pans-dark-mode :is([id^="searchinput-navbar-"] input, .navbar-search input,
+  .search-input-wrapper input, [data-region="search-input"] input):focus-visible {
+  outline: none !important;
+}
+
+:root.pans-dark-mode :is([id^="searchinput-navbar-"] button, .navbar-search button,
+  .search-input-wrapper button, [data-region="search-input"] button) {
+  background: var(--pans-raised) !important;
+  color: var(--pans-link) !important;
+  border-color: var(--pans-border-strong) !important;
+  box-shadow: none !important;
+}
+
+:root.pans-dark-mode :is([id^="searchinput-navbar-"], .navbar-search, .search-input-wrapper,
+  [data-region="search-input"]):focus-within {
+  outline: 2px solid var(--pans-accent) !important;
+  outline-offset: 2px;
+}
+
+/* Dynamic light panels added by Moodle scripts. */
+:root.pans-dark-mode :is(.bg-pulse-grey, .loading-placeholder, .placeholder,
+  [data-region$="loading-placeholder"] .bg-pulse-grey, .pans-auto-dark-surface) {
+  background-color: var(--pans-surface) !important;
+  color: var(--pans-text) !important;
+  border-color: var(--pans-border) !important;
+}
+
+:root.pans-dark-mode ::-webkit-scrollbar { width: 12px; height: 12px; }
+:root.pans-dark-mode ::-webkit-scrollbar-track,
+:root.pans-dark-mode ::-webkit-scrollbar-corner { background: var(--pans-bg); }
+:root.pans-dark-mode ::-webkit-scrollbar-thumb {
+  background: var(--pans-border-strong); border: 3px solid var(--pans-bg); border-radius: 999px;
+}
+:root.pans-dark-mode ::-webkit-scrollbar-thumb:hover { background: var(--pans-link); }

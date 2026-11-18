@@ -1,0 +1,23 @@
+:root { color-scheme: dark; font-family: system-ui, -apple-system, "Segoe UI", sans-serif; }
+* { box-sizing: border-box; }
+body { margin: 0; min-width: 310px; background: #101927; color: #f0f6ff; }
+main { padding: 20px; }
+.brand { display: flex; align-items: center; gap: 8px; }
+.brand img { width: 28px; height: 28px; border-radius: 7px; }
+.eyebrow { margin: 0 0 4px; color: #8abaff; font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+h1 { margin: 0; font-size: 23px; }
+.description { margin: 7px 0 19px; color: #b8c6d9; font-size: 14px; }
+fieldset { margin: 0; padding: 0; border: 0; }
+legend { margin-bottom: 9px; color: #dbe8fa; font-size: 13px; font-weight: 700; }
+.theme-option { display: flex; align-items: center; gap: 11px; margin: 7px 0; padding: 10px; border: 1px solid #344a67; border-radius: 10px; cursor: pointer; }
+.theme-option:has(input:checked) { border-color: #75adff; background: #1b2c45; }
+input { accent-color: #5c9dff; }
+.preview { width: 32px; height: 32px; flex: 0 0 32px; border: 1px solid #6380a4; border-radius: 8px; }
+.preview.blue { background: linear-gradient(135deg, #0c1723 50%, #286bbe 50%); }
+.preview.gray { background: linear-gradient(135deg, #17191d 50%, #55616f 50%); }
+.preview.black { background: linear-gradient(135deg, #080808 50%, #2f80d9 50%); }
+.preview.off { background: linear-gradient(135deg, #f7f8fa 50%, #bdc6d1 50%); }
+strong, small { display: block; }
+strong { font-size: 14px; }
+small { margin-top: 2px; color: #b8c6d9; font-size: 12px; }
+.status { min-height: 18px; margin: 12px 0 0; color: #9cc5ff; font-size: 12px; }
