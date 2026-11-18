@@ -104,6 +104,7 @@
 
 :root.pans-dark-mode :is(.btn-primary, .btn-primary:hover, .btn-outline-primary:hover) {
   background-color: var(--pans-accent) !important;
+  background-image: none !important;
   border-color: var(--pans-accent) !important;
   color: var(--pans-on-accent) !important;
 }
@@ -192,8 +193,36 @@
 :root.pans-dark-mode button.btn.btn.btn,
 :root.pans-dark-mode input.btn.btn.btn {
   color: var(--pans-on-accent) !important;
+  background-image: none !important;
   text-shadow: 0 1px 1px rgb(0 0 0 / 28%) !important;
   opacity: 1 !important;
+}
+
+/* Light and unstyled Moodle buttons need a dark background behind the label. */
+:root.pans-dark-mode :is(a, button, input).btn.btn:is(.btn-light, .btn-default,
+  .btn-outline-primary, :not([class*="btn-"])) {
+  background-color: var(--pans-raised) !important;
+  background-image: none !important;
+  border-color: var(--pans-border-strong) !important;
+  color: var(--pans-text) !important;
+  text-shadow: none !important;
+}
+
+:root.pans-dark-mode :is(a, button).btn.btn.btn :is(span, i, svg) {
+  color: inherit !important;
+  text-shadow: inherit !important;
+}
+
+:root.pans-dark-mode :is(a, button).btn.btn:is(.btn-light, .btn-default,
+  .btn-outline-primary, :not([class*="btn-"])):is(:hover, :focus-visible) {
+  background-color: var(--pans-hover) !important;
+}
+
+:root.pans-dark-mode :is(a, button).btn.btn.btn:is(:hover, :focus-visible) {
+  background: var(--pans-hover) !important;
+  border-color: var(--pans-border-strong) !important;
+  color: var(--pans-text) !important;
+  text-shadow: none !important;
 }
 
 :root.pans-dark-mode .progress-bar { background-color: var(--pans-accent) !important; }
@@ -271,6 +300,24 @@
   --bs-popover-border-color: var(--pans-border);
 }
 
+/* Help and footer text can otherwise retain the site's dark foreground. */
+:root.pans-dark-mode :is(.popover-body, #page-footer, .footer-content,
+  .footer-dark, .footer-dark-inner) {
+  color: var(--pans-text) !important;
+  overflow-wrap: anywhere;
+}
+
+:root.pans-dark-mode :is(.popover-body, #page-footer, .footer-content,
+  .footer-dark, .footer-dark-inner) :is(p, span, div, li, small, .icon, .fa) {
+  color: inherit;
+}
+
+:root.pans-dark-mode :is(.popover-body, #page-footer, .footer-content,
+  .footer-dark, .footer-dark-inner) a {
+  color: var(--pans-link) !important;
+  overflow-wrap: anywhere;
+}
+
 :root.pans-dark-mode .bs-popover-top > .arrow::after,
 :root.pans-dark-mode .bs-popover-auto[x-placement^="top"] > .arrow::after,
 :root.pans-dark-mode .bs-popover-auto[x-placement^="top"] > .popover-arrow::after,
@@ -343,8 +390,6 @@
 :root.pans-dark-mode :is(#nav-notification-popover-container button,
   [aria-label*="powiadom" i], [title*="powiadom" i]) {
   color: var(--pans-link) !important;
-  filter: brightness(0) saturate(100%) invert(76%) sepia(61%) saturate(844%) hue-rotate(184deg)
-    brightness(105%) contrast(102%);
 }
 
 :root.pans-dark-mode :is(.breadcrumb-nav, .breadcrumb-wrapper, .breadcrumb-container,
