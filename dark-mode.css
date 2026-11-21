@@ -80,9 +80,84 @@
   border-color: var(--pans-border) !important;
 }
 
+/* Moodle course tabs: Kurs / Uczestnicy / Oceny / Więcej. */
+:root.pans-dark-mode :is(.secondary-navigation,
+  .secondary-navigation .moremenu,
+  .secondary-navigation .more-nav,
+  .secondary-navigation .nav-tabs) {
+  background: var(--pans-surface) !important;
+  background-image: none !important;
+  color: var(--pans-link) !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+:root.pans-dark-mode .secondary-navigation {
+  width: 100% !important;
+  border: 0 !important;
+  border-radius: 0;
+}
+
+:root.pans-dark-mode .secondary-navigation .nav-tabs {
+  width: 100% !important;
+  min-width: 0 !important;
+  border-bottom: 1px solid var(--pans-border) !important;
+}
+
+:root.pans-dark-mode .secondary-navigation :is(.nav-item, .nav-link) {
+  background: transparent !important;
+  background-image: none !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+:root.pans-dark-mode .secondary-navigation .nav-link {
+  opacity: 1 !important;
+  text-shadow: none !important;
+}
+
+:root.pans-dark-mode .secondary-navigation .nav-link:is(.active, .active_tree_node) {
+  background: transparent !important;
+  color: var(--pans-link-soft) !important;
+  border: 0 !important;
+  border-bottom: 3px solid var(--pans-accent) !important;
+  border-radius: 0 !important;
+}
+
+:root.pans-dark-mode .secondary-navigation .nav-link:is(:hover, :focus-visible) {
+  background: transparent !important;
+  color: var(--pans-link-soft) !important;
+  border: 0 !important;
+}
+
 :root.pans-dark-mode :is(h1, h2, h3, h4, h5, h6, p, li, label, .text-body, .text-dark,
   .text-black, .text-reset, .dropdown-item, .nav-tabs .nav-link, .nav-pills .nav-link,
   .breadcrumb-item.active) { color: var(--pans-text) !important; }
+
+/* Moodle resource and page content. Inline theme colors may otherwise make
+   instructions and examples almost invisible in the dark palette. */
+:root.pans-dark-mode :is(#region-main, [role="main"], .no-overflow,
+  .generalbox, .activity-description) :is(p, span, li, td, th,
+  dt, dd, strong, b, em, i, label, small) {
+  color: var(--pans-text) !important;
+  opacity: 1 !important;
+  -webkit-text-fill-color: var(--pans-text) !important;
+}
+
+:root.pans-dark-mode :is(#region-main, [role="main"], .no-overflow,
+  .generalbox, .activity-description) :is(a, a span) {
+  color: var(--pans-link) !important;
+  -webkit-text-fill-color: var(--pans-link) !important;
+}
+
+:root.pans-dark-mode :is(#region-main, [role="main"], .no-overflow,
+  .generalbox, .activity-description) :is(pre, code,
+  .hljs, [class*="highlight"]) {
+  background-color: var(--pans-input) !important;
+  color: var(--pans-link-soft) !important;
+  border-color: var(--pans-border) !important;
+  -webkit-text-fill-color: var(--pans-link-soft) !important;
+}
 
 :root.pans-dark-mode :is(.text-muted, .text-secondary, small, .description,
   input::placeholder, textarea::placeholder) { color: var(--pans-muted) !important; opacity: 1; }
@@ -225,6 +300,39 @@
   text-shadow: none !important;
 }
 
+/* Activity launch buttons such as "Uruchom". */
+:root.pans-dark-mode .activity-launch-button a.btn,
+:root.pans-dark-mode .activity-launch-button a.btn.btn-primary,
+:root.pans-dark-mode .activity-launch-button a.btn.btn-sm {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: auto !important;
+  height: auto !important;
+  min-height: 32px !important;
+  margin: 0 !important;
+  padding: 6px 14px !important;
+  background: var(--pans-accent) !important;
+  background-image: none !important;
+  border: 1px solid var(--pans-accent) !important;
+  border-radius: 999px !important;
+  color: var(--pans-on-accent) !important;
+  font-size: 14px !important;
+  line-height: 20px !important;
+  text-decoration: none !important;
+  text-shadow: none !important;
+  box-shadow: none !important;
+  opacity: 1 !important;
+  -webkit-text-fill-color: var(--pans-on-accent) !important;
+}
+
+:root.pans-dark-mode .activity-launch-button a.btn:is(:hover, :focus-visible) {
+  background: var(--pans-hover) !important;
+  border-color: var(--pans-border-strong) !important;
+  color: var(--pans-text) !important;
+  -webkit-text-fill-color: var(--pans-text) !important;
+}
+
 :root.pans-dark-mode .progress-bar { background-color: var(--pans-accent) !important; }
 :root.pans-dark-mode :is(a, button, input, select, textarea):focus-visible {
   outline: 3px solid hsl(42 88% 62%) !important; outline-offset: 2px;
@@ -278,6 +386,107 @@
   .category-card .category-count, .course-category-card .category-count) {
   background: var(--pans-accent-deep) !important; color: var(--pans-link-soft) !important;
   border: 1px solid var(--pans-border-strong) !important;
+}
+
+/* Course topic sections and activities (including examples and resources). */
+:root.pans-dark-mode :is(.course-content, #course-format-6b017817350c16b0178165ccde12,
+  .course-content .topics, .course-section, .section-item,
+  .course-content-item-content, .section .section, .activity-wrapper,
+  .activity-grid, .activity-name-area, .activitytitle, .activityname) {
+  background-color: transparent !important;
+  color: var(--pans-text) !important;
+  border-color: var(--pans-border) !important;
+}
+
+:root.pans-dark-mode :is(.course-section-header, .section .course-section-header,
+  .activity-item, [data-region="activity-card"]) {
+  background-color: var(--pans-surface) !important;
+  color: var(--pans-text) !important;
+  border-color: var(--pans-border) !important;
+}
+
+:root.pans-dark-mode .course-section-header {
+  border-radius: 16px 16px 0 0;
+  border-bottom: 1px solid var(--pans-border) !important;
+}
+
+:root.pans-dark-mode :is(.course-section-header, .course-section-header *) {
+  opacity: 1;
+}
+
+:root.pans-dark-mode :is(.sectionname, .sectionname a, .activityname,
+  .activityname a, .activityname .instancename, .activitytitle,
+  .activitytitle .instancename, .course-content-item, .course-content-item-content) {
+  color: var(--pans-text) !important;
+  opacity: 1 !important;
+}
+
+:root.pans-dark-mode :is(.sectionname a, .activityname a, .activitytitle a,
+  .activity-name-area a, .activity-name-area .instancename) {
+  color: var(--pans-link) !important;
+  text-decoration-color: var(--pans-link) !important;
+}
+
+:root.pans-dark-mode :is(.sectionname a, .activityname a):is(:hover, :focus-visible) {
+  color: var(--pans-link-soft) !important;
+}
+
+:root.pans-dark-mode :is(.activity-item, [data-region="activity-card"]):hover,
+:root.pans-dark-mode .activity-wrapper:hover > .activity-item {
+  background-color: var(--pans-hover) !important;
+}
+
+:root.pans-dark-mode :is(.activity-icon, .activityiconcontainer, .activityiconcontainer.courseicon) {
+  background-color: var(--pans-raised) !important;
+  color: var(--pans-link) !important;
+  border: 1px solid var(--pans-border) !important;
+  border-radius: 8px;
+}
+
+:root.pans-dark-mode :is(.activity-icon img, .activityiconcontainer img,
+  .activityicon, [data-region="activity-icon"]) {
+  opacity: 1 !important;
+  filter: brightness(1.18) contrast(1.08);
+}
+
+:root.pans-dark-mode :is(.section-collapsemenu, .icons-collapse-expand,
+  .icons-collapse-expand .icon, .section-collapsemenu .icon) {
+  color: var(--pans-link) !important;
+  fill: currentColor;
+}
+
+/* Collapse/expand icon at the start of each course section. */
+:root.pans-dark-mode .course-section-header .icons-collapse-expand {
+  width: 36px !important;
+  height: 36px !important;
+  min-width: 36px !important;
+  border: 1px solid var(--pans-border-strong) !important;
+  border-radius: 50% !important;
+  background: var(--pans-raised) !important;
+  background-image: none !important;
+  color: var(--pans-link-soft) !important;
+  box-shadow: none !important;
+}
+
+:root.pans-dark-mode .course-section-header .icons-collapse-expand:is(:hover, :focus-visible) {
+  background: var(--pans-accent-deep) !important;
+  border-color: var(--pans-accent) !important;
+  color: var(--pans-link-soft) !important;
+}
+
+:root.pans-dark-mode .course-section-header .icons-collapse-expand :is(.icon, i, svg) {
+  color: var(--pans-link-soft) !important;
+  fill: var(--pans-link-soft) !important;
+  border-top-color: var(--pans-link-soft) !important;
+  opacity: 1 !important;
+}
+
+:root.pans-dark-mode :is(.activitybadge, .badge.rounded-pill, .sectionbadges,
+  .availabilityinfo, [data-region="availabilityinfo"]) {
+  background-color: var(--pans-raised) !important;
+  color: var(--pans-muted) !important;
+  border-color: var(--pans-border) !important;
+  opacity: 1 !important;
 }
 
 /* Popovers, user menu and message drawer. */
